@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 // SERVER CONFIG
 const app = express();
@@ -14,6 +15,8 @@ const DB = process.env.DATABASE_LOCAL;
 mongoose.connect(DB).then((connection) => {
     console.log("Connection to DB is now established!")
 })
+
+app.use(cors());
 
 // ROUTING
 const questionsRouter = require("./routes/questions/questionsRoutes.js");

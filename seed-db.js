@@ -16,26 +16,26 @@ mongoose.connect(DB).then((connection) => {
 
 // SAVING DOCUMENT TO DB
 const answer1 = new Answer({
-    body: "Yo que sé, tío",
+    body: "La parte del casco situada por encima de la línea de flotación en todas las condiciones.",
     validated: false,
     times_chosen: 0
 });
 
 const answer2 = new Answer({
-    body: "No me ralles",
+    body: "El conjunto de palos y jarcia fija de la embarcación.",
     validated: false,
     times_chosen: 0
 });
 
 const answer3 = new Answer({
-    body: "Pos claro",
+    body: "La zona de popa donde se aloja el timón y el codaste.",
     validated: false,
     times_chosen: 0
 });
 
 const answer4 = new Answer({
-    body: "Pasapalabra",
-    validated: false,
+    body: "La parte del casco situada por debajo de la línea de flotación en carga.",
+    validated: true,
     times_chosen: 0
 });
 
@@ -43,9 +43,9 @@ const testQuestion = new Question({
     category: {
         domain: "Nomenclatura náutica",
         subdomain: "Casco",
-        topic: "Popa",
+        topic: "Obra viva",
     },
-    body: "¿Se puede cagar en alta mar?",
+    body: "¿Qué se denomina 'obra viva' del casco?",
     img: false,
     image_url: null,
     validated: false,

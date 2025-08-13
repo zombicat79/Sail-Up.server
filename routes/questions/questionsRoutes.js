@@ -1,12 +1,20 @@
 const express = require("express");
 const router = express.Router();
 
-const data = require("./../../data-models/questions.json");
+const Question = require("./../../models/questions/questionsModel");
 
 router
     .route("/")
     .get((req, res, next) => {
-        res.json(data);
+        Question.find()
+            .then((questions) => {
+                console.log(questions)
+                res.status(200).json({
+                    status: 'success',
+                    data: questions
+                })
+            })
+            .catch((err) => console.log(err));
     });
 
 module.exports = router;
