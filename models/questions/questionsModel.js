@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { answerSchema } = require("./../answers/answersModel");
+const { optionSchema } = require("./../options/optionsModel");
 
 const questionSchema = new mongoose.Schema({
     category: {
@@ -7,11 +7,15 @@ const questionSchema = new mongoose.Schema({
         subdomain: { type: String },
         topic: { type: String },
     },
-    body: { type: String },
-    img: { type: Boolean },
-    image_url: { type: String },
+    question: { type: String },
+    thumbnail: { type: Boolean },
+    thumbnail_url: { type: String },
     validated: { type: Boolean },
-    answers: [answerSchema],
+    options: [optionSchema],
+    summary: {
+        text: { type: String },
+        image_url: { type: String }
+    },
     times_shown: { type: Number },
 });
 
