@@ -1,6 +1,7 @@
 // IMPORTS
 const express = require("express");
 const mongoose = require("mongoose");
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const dotenv = require("dotenv");
 const cors = require("cors");
 
@@ -8,12 +9,17 @@ const cors = require("cors");
 const app = express();
 dotenv.config();
 
+const ENVIRONMENT = process.env.ENVIRONMENT
 const PORT = process.env.PORT;
-const DB = process.env.DATABASE_LOCAL;
+const DB = ENVIRONMENT === "DEV" ? process.env.DATABASE_LOCAL : process.env.DATABASE;
 
 // CONNECTION TO DB
 mongoose.connect(DB).then((connection) => {
-    console.log("Connection to DB is now established!")
+    if (ENVIRONMENT === "PROD") {
+        console.log("Connection to remote DB is now established!")
+    } else {
+        console.log("Connection to local DB is now established!")
+    }
 })
 
 app.use(cors());
