@@ -1,7 +1,6 @@
 // IMPORTS
 const express = require("express");
 const mongoose = require("mongoose");
-const { MongoClient, ServerApiVersion } = require('mongodb');
 const dotenv = require("dotenv");
 const cors = require("cors");
 
