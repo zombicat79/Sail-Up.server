@@ -10,22 +10,17 @@ const app = express();
 dotenv.config();
 
 const ENVIRONMENT = process.env.ENVIRONMENT
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 const DB = ENVIRONMENT === "DEV" ? process.env.DATABASE_LOCAL : process.env.DATABASE;
 
 // CONNECTION TO DB
-mongoose.connect(DB)
-    .then((connection) => {
-        if (ENVIRONMENT === "PROD") {
-            console.log("Connection to remote DB is now established!")
-        } else {
-            console.log("Connection to local DB is now established!")
-        }
-    })
-    .catch((err) => {
-        console.error("Failed to connect to Mongo: ", err.message);
-        process.exit(1);
-    })
+mongoose.connect(DB).then((connection) => {
+    if (ENVIRONMENT === "PROD") {
+        console.log("Connection to remote DB is now established!")
+    } else {
+        console.log("Connection to local DB is now established!")
+    }
+})
 
 app.use(cors());
 

@@ -1,8 +1,6 @@
 const OpenAI = require("openai");
-const fetch = require("node-fetch");
 const client = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-    fetch
+    apiKey: process.env.OPENAI_API_KEY
 });
 
 async function makeQuery() {
