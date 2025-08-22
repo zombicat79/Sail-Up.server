@@ -34,7 +34,7 @@ const questionsRouter = require("./routes/questions/questionsRoutes.js");
 const topicsRouter = require("./routes/topics/topicsRoutes");
 
 app.use("/api/v1/questions", questionsRouter);
-app.use("/api/v1/topics", questionsRouter);
+app.use("/api/v1/topics", topicsRouter);
 
 // START SERVER
 app.listen(PORT, () => {

@@ -15,6 +15,9 @@ const ItemSchema = new mongoose.Schema(
     Subdomain: { type: String },
     Topic: { type: String, required: true },
     Question: { type: String, required: true },
+    Frequency: { type: String },
+    Thumbnail: { type: Boolean },
+    Thumbnail_url: { type: String },
     Options: { type: [OptionSchema], required: true },
     Summary: {
       type: Map,

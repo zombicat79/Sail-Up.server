@@ -30,6 +30,9 @@ const DATA = {
                     Domain: "Nomenclatura náutica",
                     Subdomain: "Terminología",
                     Topic: "Adrizar",
+                    Frequency: "High",
+                    Thumbnail: true,
+                    Thumbnail_url: "https://ofertacursosnauticos.com/wp-content/uploads/2022/04/estructura.jpg",
                     Question: "Una embarcación está adrizada cuando...",
                     Options: [
                         { text: "No tiene escora.", correct: true },
@@ -48,6 +51,9 @@ const DATA = {
                 Domain: "Nomenclatura náutica",
                 Subdomain: "Casco",
                 Topic: "Aleta",
+                Frequency: "High",
+                Thumbnail: false,
+                Thumbnail_url: "",
                 Question: "Se denomina aleta a...",
                 Options: [
                     { text: "La parte posterior del costado que converge y cierra el casco por detrás.", correct: true },
