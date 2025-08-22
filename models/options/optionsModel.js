@@ -1,9 +1,26 @@
 const mongoose = require('mongoose');
 
 const optionSchema = new mongoose.Schema({
-    body: { type: String },
-    correct: { type: Boolean },
-    times_chosen: { type: Number }
+    option_1: {
+        body: { type: String },
+        correct: { type: Boolean },
+        summary: { type: String }
+    },
+    option_2: {
+        body: { type: String },
+        correct: { type: Boolean },
+        summary: { type: String }
+    },
+    option_3: {
+        body: { type: String },
+        correct: { type: Boolean },
+        summary: { type: String }
+    },
+    option_4: {
+        body: { type: String },
+        correct: { type: Boolean },
+        summary: { type: String }
+    }
 });
 
 const Option = mongoose.model("Option", optionSchema);

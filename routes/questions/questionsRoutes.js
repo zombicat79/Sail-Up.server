@@ -9,6 +9,7 @@ router
     .get((req, res) => {
         Question.find()
             .then((questions) => {
+                console.log(questions)
                 res.status(200).json({
                     status: 'success',
                     data: questions
